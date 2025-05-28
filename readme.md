@@ -51,9 +51,18 @@ SECRET_KEY = os.getenv('SECRET_KEY', default='django-insecure-@#0uqgasfgasdffxcv
 
 ### .gitignore
 Správny projekt má nastavení pro ignorované soubory v git repozitáři v souboru '.gitignore'.
+
 '''git
 /.idea
 *.pyc
 /db.sqlite3
 /.env
 '''
+
+### Aplikace
+### Vytvoření
+'''bash
+python manage.py startapp <název_aplikace>
+'''
+
+### Struktura aplikace
