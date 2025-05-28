@@ -108,3 +108,57 @@ vytváříme samostanou vývojovou větev. Zde programujeme danou funkcionalitu,
 až když je plně funkční, provedeme `merge` do větve `dev`. Ve větvi `dev` vše znovu otestuji 
 (mohlo dojít ke konfliktu a mohlo se tedy něco "rozbít"). Pokud je i zde vše funkční, můžeme dát
 `merge` do `master`.
+
+
+# Projekt Hollymovies
+## Funcionality 
+- Seznam filmů (abecedně)
+- Filtrování 
+  - podle žánru
+  - rok
+  - hodnocení
+  - podle herce
+- Detail filmu
+  - délka
+  - krátký popis
+  - rok
+  - herci
+  - zeme
+  - režisér
+  - hodnocení
+  - ocenění
+  - obrázky
+  - Název filmu
+  - Návštěvnost v kinech (https://kinomaniak.cz/)
+  - skladetel hudby
+  - VOD (https://www.kinobox.cz/)
+  - žánr
+  - trailer
+- Seznam herců
+- Detail herce
+  - filmy kde hrál
+  - rok narození
+  - země
+  - ocenění
+  - jméno
+  - příjmení
+  - popis osoby
+  - obrázky
+  - umělecké jméno
+
+## Databáze
+- Movie
+  - title_orig (String)
+  - title_cz  (String)
+  - Directors (n:m - > Director)
+  - Actors (n:m - > Actor)
+  - Composers (n:m - > Composer)
+  - length (Integer) (minutes)
+  - Description (String)
+  - Year (Integer)
+  - Countries (n:m - > Country)
+- Genre
+- Actor
+- Director
+- Composer
+- Country
