@@ -27,15 +27,33 @@ django-admin startproject <nazev_projektu> .
 python manage.py runserver
 '''
 
-#vytvoření superuživatele
-''' bash
+### Vytvoření superuživatele
+'''bash
 python manage.py createsuperuser
 '''
 
 ### .env
-slouží k ukládání citlivých informací (SECRTE_KEY, hesla, přístupové údaje..)
+slouží k ukládání citlivých informací (SECRET_KEY, hesla, přístupové údaje..)
 
 ### Instalace
 ''' bash
 pip install python-dotenv
+pip freeze > requirements.txt
 ''''
+
+Vytvoříme soubor s názvem ".env" v kořenovém adresáři projektu
+
+Do souboru 'settings.py' vložíme:
+'''python
+from dotenv import load_dotenv
+load_dotenv()
+SECRET_KEY = os.getenv('SECRET_KEY', default='django-insecure-@#0uqgasfgasdffxcvxc@4#y-hgaf4d65f4asdfsd2^j5o5ddk7x)')
+
+### .gitignore
+Správny projekt má nastavení pro ignorované soubory v git repozitáři v souboru '.gitignore'.
+'''git
+/.idea
+*.pyc
+/db.sqlite3
+/.env
+'''
