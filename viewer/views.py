@@ -1,3 +1,5 @@
+from django.http import HttpResponse
+
 
 def hello(request):
     return HttpResponse("Hello World!")
@@ -23,4 +25,13 @@ def add(request, num1, num2):
 # Domácí úkol:
 # Napsat funkci add2, která bude sčítat,
 # ale parametry bude načítat pomocí kódování URL
-# Např.: http://127.0.0.1:8000/add2?num1=2&num2=3
+# Např.: http://127.0.0.1:8000/add2?num1=2&num2=3 -> 2 + 3 = 5
+# Např.: http://127.0.0.1:8000/add2               -> 0 + 0 = 0
+# Např.: http://127.0.0.1:8000/add2?num1=2        ->
+
+
+
+def add2(request):
+    num1 = int(request.GET.get('num1', 0)),
+    num2 = int(request.GET.get('num2', 0)),
+    return HttpResponse(f"{num1} + {num2} = {num1+num2}")

@@ -15,9 +15,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.template.defaultfilters import add
 from django.urls import path
 
-from viewer.views import hello, hello2, hello3, hello4
+from viewer.views import hello, hello2, hello3, hello4, add2
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,4 +29,5 @@ urlpatterns = [
     path('hello4/<str:s>', hello4),
 
     path('add/<int:num1>/<int:num2>/', add),
+    path("add2", add2),
 ]
