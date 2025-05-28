@@ -66,3 +66,31 @@ python manage.py startapp <název_aplikace>
 '''
 
 ### Struktura aplikace
+- 'viewer' - složka aplikace
+  - 'migrations' - složka obsahující migrační skripty
+  - '__init__.py' - je tu zde jen proto, aby daná složka byla package
+  - 'admin.py' - nastavení administrační stránky
+  - 'apps.py' - nastavení aplikace - nebudeme upravovat
+  - 'models.py' - zde bude definice modelů (databáze)
+  - 'tests.py' - zde budou views(funkcionalita)
+
+
+### Registrace aplikace
+Do souboru 'settings.py' musíme novou aplikaci zaregistrovat do seznamu
+
+"""
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+
+    'viewer',
+]
+
+### Vytvoření superuživatele
+'''bash
+python manage.py createsuperuser
+''''
