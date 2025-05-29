@@ -170,8 +170,8 @@ python manage.py createsuperuser
 ## Databáze
 - [x] Genre
   - [x] name (String)
-- [ ] Country
-  - [ ] name (String) 
+- [x] Country
+  - [x] name (String) 
 - [ ] Creator
   - [ ] name (String)
   - [ ] surname (String)

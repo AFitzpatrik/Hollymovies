@@ -1,5 +1,4 @@
-from django.db.models import Model, CharField
-
+from django.db.models import Model, CharField, DateField, ForeignKey, TextField
 
 
 class Genre(Model):
@@ -27,3 +26,13 @@ class Country(Model):
 
     def __str__(self):
         return self.name
+
+
+class Creator(Model):
+    name = CharField(max_length=32, null=True, blank=True)
+    surname = CharField(max_length=32, null=True, blank=True)
+    artistic_name = CharField(max_length=32, null=True, blank=True)
+    date_of_birth = DateField(null=True, blank=True)
+    date_of_death = DateField(null=True, blank=True)
+    country = ForeignKey(Country, null=True, blank=True, on_delete=Model.SET_NULL, related_name="creators")
+    biography = TextField(null=True, blank=True)
