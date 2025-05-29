@@ -194,3 +194,4 @@ python manage.py createsuperuser
 
 
 2:29:13 POKRAČOVNÍ
+#Zkouška pullrequestu
