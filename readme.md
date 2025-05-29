@@ -193,4 +193,4 @@ python manage.py createsuperuser
   - [ ] countries (n:m -> Country)
 
 
-2:29:13 POKRAČOVNÍ VE VÝUCE BACKENDU
+
