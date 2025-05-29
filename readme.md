@@ -191,3 +191,6 @@ python manage.py createsuperuser
   - [ ] description (String)
   - [ ] year (Integer)
   - [ ] countries (n:m -> Country)
+
+
+2:29:13 POKRAČOVNÍ
