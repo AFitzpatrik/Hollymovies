@@ -168,8 +168,8 @@ python manage.py createsuperuser
   - [ ] obrázky
 
 ## Databáze
-- [ ] Genre
-  - [ ] name (String)
+- [x] Genre
+  - [x] name (String)
 - [ ] Country
   - [ ] name (String) 
 - [ ] Creator
