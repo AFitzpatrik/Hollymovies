@@ -1,10 +1,39 @@
-# Projekt Hollymovies
+# Backend technologies
 
 ## Sylabus
-### 27. května 2025
+### Úterý, 27. května · 17:30–21:00
+- Prošli jsme slidy 1-15 
 - Úvod
-- Vytvoření projektu
+- Vytvoření projektu `hollymovies`
 - Vytvoření superuser
+- Vytvoření aplikace `viewer`
+- .env
+- Git repozitář (.gitignore)
+- readme.md
+- Domácí úkol: definovat add2 funkci pro sčítání pomocí kódování URL
+
+### Středa, 28. května · 17:30–21:00
+- Prošli jsme slidy 16-27
+- ORM
+- Model
+- migrace
+- shell
+- viewer.models.py
+  - Genre
+  - Country
+  - Creator
+- Domácí úkol: definovat model Movie
+
+### Pátek, 30. května · 17:30–21:00
+### Pondělí, 2. června · 17:30–21:00
+### Úterý, 3. června · 17:30–21:00
+### Čtvrtek, 5. června · 17:30–21:00
+### Pátek, 13. června · 17:30–21:00
+### Pondělí, 16. června · 17:30–21:00
+### Středa, 25. června · 17:30–21:00
+### Pondělí, 30. června · 17:30–20:30
+### Úterý, 1. července · 17:30–21:00
+### Čtvrtek, 3. července · 17:30–21:30
 
 ## Django
 ### Instalace
@@ -62,7 +91,7 @@ python manage.py startapp <název_aplikace>
 ```
 
 #### Struktura aplikace
-- `viever` - složka aplikace
+- `viewer` - složka aplikace
   - `migrations` - složka obsahující migrační skripty
   - `__init__.py` - je tu zde jen proto, aby daná složka byla package
   - `admin.py` - nastavení administrační stránky
@@ -99,66 +128,66 @@ INSTALLED_APPS = [
 python manage.py createsuperuser
 ```
 
-# Práces GITem
-- `master` - hlavní branch (větev) - zde nikdy neprogramujeme, slouží k tzv. release
-- `dev` - hlavní vývojová větev - slouží k rozdělování práce do jednolivých pracovních větví. Ani zde
-neprogramujeme.
-- `feature-branches` - vývojové větve, které vycházejí z `dev`. Pro každou novou funkcionalitu
-vytváříme samostanou vývojovou větev. Zde programujeme danou funkcionalitu, otestujeme a
-až když je plně funkční, provedeme `merge` do větve `dev`. Ve větvi `dev` vše znovu otestuji 
-(mohlo dojít ke konfliktu a mohlo se tedy něco "rozbít"). Pokud je i zde vše funkční, můžeme dát
-`merge` do `master`.
-
-
 # Projekt Hollymovies
-## Funcionality 
-- Seznam filmů (abecedně)
-- Filtrování 
-  - podle žánru
-  - rok
-  - hodnocení
-  - podle herce
-- Detail filmu
-  - délka
-  - krátký popis
-  - rok
-  - herci
-  - zeme
-  - režisér
-  - hodnocení
-  - ocenění
-  - obrázky
-  - Název filmu
-  - Návštěvnost v kinech (https://kinomaniak.cz/)
-  - skladetel hudby
-  - VOD (https://www.kinobox.cz/)
-  - žánr
-  - trailer
-- Seznam herců
-- Detail herce
-  - filmy kde hrál
-  - rok narození
-  - země
-  - ocenění
-  - jméno
-  - příjmení
-  - popis osoby
-  - obrázky
-  - umělecké jméno
+## Funkcionalita
+- [ ] 1 seznam filmů (abecedně)
+- [ ] 2 detail filmu 
+  - [ ] originální název
+  - [ ] český název
+  - [ ] režisér
+  - [ ] herci
+  - [ ] skladatel hudby
+  - [ ] délka
+  - [ ] popis
+  - [ ] rok
+  - [ ] země
+  - [ ] hodnocení
+  - [ ] ocenění
+  - [ ] obrázky
+  - [ ] návštěvnost v kinech (https://kinomaniak.cz/)
+  - [ ] VOD (https://www.kinobox.cz/)
+  - [ ] žánr
+  - [ ] trailer
+  - [ ] kde se odehrává film
+- [ ] 3 filtrování filmů
+  - [ ] podle žánru 
+  - [ ] podle roku
+  - [ ] podle hodnocení
+  - [ ] podle herce
+- [ ] 4 seznam herců
+- [ ] 5 detail herce
+  - [ ] jméno
+  - [ ] příjmení
+  - [ ] umělecké jméno
+  - [ ] filmy, ve kterých hrál
+  - [ ] datum narození
+  - [ ] datum úmrtí
+  - [ ] země
+  - [ ] ocenění
+  - [ ] biografie
+  - [ ] obrázky
 
 ## Databáze
-- Movie
-  - title_orig (String)
-  - title_cz  (String)
-  - Directors (n:m - > Director)
-  - Actors (n:m - > Actor)
-  - Composers (n:m - > Composer)
-  - length (Integer) (minutes)
-  - Description (String)
-  - Year (Integer)
-  - Countries (n:m - > Country)
-- Genre
-- Actor
-- Director
-- Composer
-- Country
+- [ ] Genre
+  - [ ] name (String)
+- [ ] Country
+  - [ ] name (String) 
+- [ ] Creator
+  - [ ] name (String)
+  - [ ] surname (String)
+  - [ ] artistic_name (String)
+  - [ ] date_of_birth (Date)
+  - [ ] date_of_death (Date)
+  - [ ] country (FK -> Country)
+  - [ ] biography (String)
+- [ ] Movie
+  - [ ] title_orig (String)
+  - [ ] title_cz (String)
+  - [ ] genres (n:m -> Genre) # ManyToManyField(Genre, blank=True, related_name='movies')
+  - [ ] directors (n:m -> Creator)
+  - [ ] actors (n:m -> Creator)
+  - [ ] composers (n:m -> Creator)
+  - [ ] length (Integer) (minuty)
+  - [ ] description (String)
+  - [ ] year (Integer)
+  - [ ] countries (n:m -> Country)
