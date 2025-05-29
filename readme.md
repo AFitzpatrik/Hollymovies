@@ -172,14 +172,14 @@ python manage.py createsuperuser
   - [x] name (String)
 - [x] Country
   - [x] name (String) 
-- [ ] Creator
-  - [ ] name (String)
-  - [ ] surname (String)
-  - [ ] artistic_name (String)
-  - [ ] date_of_birth (Date)
-  - [ ] date_of_death (Date)
-  - [ ] country (FK -> Country)
-  - [ ] biography (String)
+- [x] Creator
+  - [x] name (String)
+  - [x] surname (String)
+  - [x] artistic_name (String)
+  - [x] date_of_birth (Date)
+  - [x] date_of_death (Date)
+  - [x] country (FK -> Country)
+  - [x] biography (String)
 - [ ] Movie
   - [ ] title_orig (String)
   - [ ] title_cz (String)

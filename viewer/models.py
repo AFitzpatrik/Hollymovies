@@ -1,4 +1,5 @@
-from django.db.models import Model, CharField, DateField, ForeignKey, TextField
+from django.db import models
+from django.db.models import Model, CharField, DateField, ForeignKey, TextField, DateTimeField
 
 
 class Genre(Model):
@@ -34,5 +35,19 @@ class Creator(Model):
     artistic_name = CharField(max_length=32, null=True, blank=True)
     date_of_birth = DateField(null=True, blank=True)
     date_of_death = DateField(null=True, blank=True)
-    country = ForeignKey(Country, null=True, blank=True, on_delete=Model.SET_NULL, related_name="creators")
+    country = ForeignKey(Country, null=True, blank=True, on_delete=models.SET_NULL, related_name="creators")
     biography = TextField(null=True, blank=True)
+    created = DateTimeField(auto_now_add=True)
+    updated = DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["surname", "name", "artistic_name", "date_of_birth"]
+
+
+        def __repr__(self):
+            return f"Creator(name={self.name}, surname={self.surname}, artistic_name={self.artistic_name})"
+
+        def __str__(self):
+            if self.date_of_birth:
+                return f"{self.name} {self.surname} ({self.date_of_birth.year})"
+            return f"{self.name} {self.surname}"
