@@ -1,5 +1,6 @@
 from django.db import models
-from django.db.models import Model, CharField, DateField, ForeignKey, TextField, DateTimeField, ManyToManyField
+from django.db.models import Model, CharField, DateField, ForeignKey, TextField, DateTimeField, ManyToManyField, \
+    IntegerField
 
 
 class Genre(Model):
@@ -54,19 +55,21 @@ class Creator(Model):
 
 
 class Movie(Model):
-    title_orig = CharField(max_length=64, null=False, blank=False)
+    title_orig = CharField(max_length=64, null=False, blank=False, unique=False)
     title_cz = CharField(max_length=64, null=True, blank=True)
     genre = ManyToManyField(Genre, blank=True, related_name="movies")
     directors = ManyToManyField(Creator, blank=True, related_name="directing")
-    actors = ForeignKey(Creator,null=True, blank=True, on_delete=models.SET_NULL, related_name="acting_movies")
-    composers = ForeignKey(Creator,null=True, blank=True, on_delete=models.SET_NULL, related_name="composed_movies")
-    length = ForeignKey(Creator,null=True, blank=True, on_delete=models.SET_NULL, related_name="length_movies")
+    actors = ManyToManyField(Creator, blank=True, related_name="acting")
+    composers = ManyToManyField(Creator, blank=True, related_name="composing")
+    length = IntegerField(null=True, blank=True)
     description = TextField(null=True, blank=True)
-    year = DateField(null=True, blank=True)
-    countries = ForeignKey(Creator, null=True, blank=True, on_delete=models.SET_NULL, related_name="movies")
+    year = IntegerField(null=True, blank=True)
+    countries = ManyToManyField(Country,blank=True, related_name="movies")
+    created = DateTimeField(auto_now_add=True)
+    updated = DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ["title_orig", "title_cz", "genre", "directors", "actors", "composers", "length", "year", "countries"]
+        ordering = ["title_orig", "year"]
 
 
         def __repr__(self):
@@ -74,3 +77,5 @@ class Movie(Model):
 
         def __str__(self):
             return f"{self.title_orig} {self.title_cz} ({self.genre})"
+
+        #0:40 kurz
