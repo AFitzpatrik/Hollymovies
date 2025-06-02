@@ -45,13 +45,14 @@ class Creator(Model):
         ordering = ["surname", "name", "artistic_name", "date_of_birth"]
 
 
-        def __repr__(self):
-            return f"Creator(name={self.name}, surname={self.surname}, artistic_name={self.artistic_name})"
+    def __repr__(self):
+        return f"Creator(name={self.name}, surname={self.surname}, artistic_name={self.artistic_name})"
 
-        def __str__(self):
-            if self.date_of_birth:
-                return f"{self.name} {self.surname} ({self.date_of_birth.year})"
-            return f"{self.name} {self.surname}"
+    def __str__(self):
+        if self.date_of_birth:
+            return f"{self.name} {self.surname} ({self.date_of_birth.year})"
+        return f"{self.name} {self.surname}"
+
 
 
 class Movie(Model):
@@ -72,10 +73,12 @@ class Movie(Model):
         ordering = ["title_orig", "year"]
 
 
-        def __repr__(self):
-            return f"Movie(title_orig={self.title_orig}, title_cz={self.title_cz}, genre={self.genre})"
+    def __repr__(self):
+        if self.year:
+            return f"Movie(title_orig={self.title_orig} ({self.year})"
+        return f"{self.title_orig}"
 
-        def __str__(self):
-            return f"{self.title_orig} {self.title_cz} ({self.genre})"
-
-        #0:40 kurz
+    def __str__(self):
+        if self.year:
+            return f"Movie(title_orig={self.title_orig} ({self.year})"
+        return f"{self.title_orig}"
