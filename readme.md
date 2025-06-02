@@ -193,5 +193,5 @@ python manage.py createsuperuser
   - [ ] countries (n:m -> Country)
 
 
-ZKUSIT DODĚLAT MOVIES
+
 
