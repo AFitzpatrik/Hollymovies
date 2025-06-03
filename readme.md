@@ -221,5 +221,49 @@ python manage.py loaddatautf8 .\files\fixtures.json
 ''''
 
 
+### Dotazy (Queries)
+#### Import modelů
+"from viewer.models import *"
 
+#### .all()
+- Vrací kolekci všech nalezených záznamů z dané tabulky:
+"Movie.objects.all()"
+"Creator.objects.all()"
+
+#### .get()
+- Vrátí jeden nalezený záznam, kdyby bylo víc záznamů se stejným hledáním, vrátí se pouze ten první záznam
+"Movie.objects.get(id=1)"
+
+#### .filter()
+Vrací kolekc záznamů, které splňují podmínky:
+"Movies.objects.filter(id=1)"
+"Movies.objects.filter(year=1994)"
+"Creator.objects.filter(date_of_birth__year=1955)"
+"Creator.objects.filter(date_of_birth__year__gt=1955)" #__gt = greater than (vetší nez)
+"Creator.objects.filter(date_of_birth__year__gt=1955)" #__gte = greater than equal (větší než nebo rovno)
+"Creator.objects.filter(date_of_birth__year__lt=1955)" #__lt = less than (měnsí nez)
+"Creator.objects.filter(date_of_birth__year__lt=1955)" #__lte = less than equal (měnsí nez nebo rovno)
+
+Výpis všech filmů které mají žánr drama:
+
+drama = Genre.objects.get(name="Drama")
+Movie.objects.filter(genres=drama)
+
+nebo:
+
+"Movie.objects.filter(genres=Genre.objects.get(name="Drama"))"
+
+nebo:
+
+"drama = Genre.objects.get(name="Drama")"
+"drama.movies.all()"
+
+Herci daného filmu:
+
+"movie = Movie.objects.get(title_orig="Forrest Gump")"
+"movie.actors.all()"
+
+Všechny filmy, ve kterch hrál Tom Hanks:
+"tom = Creator.objects.get(name="Tom", surname="Hanks")
+"tom.acting.all()"
 
