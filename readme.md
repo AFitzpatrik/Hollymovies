@@ -330,7 +330,7 @@ Vícenásobné filtry:
 
 #### .count()
 
-`Movie.objects.filter(year=1994).count()` -- počet filmů z roku 1994
+`Movie.objects.filter(year=1994).count()` -- počet filmů z roku 1994 (vrátí počet)
 
 #### .order_by()
 
