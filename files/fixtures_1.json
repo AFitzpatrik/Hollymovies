@@ -1,0 +1,150 @@
+[
+  {
+    "model": "viewer.genre",
+    "pk": 1,
+    "fields": {
+      "name": "Thriller"
+    }
+  },
+  {
+    "model": "viewer.genre",
+    "pk": 2,
+    "fields": {
+      "name": "Krimi"
+    }
+  },
+  {
+    "model": "viewer.genre",
+    "pk": 3,
+    "fields": {
+      "name": "Horror"
+    }
+  },
+  {
+    "model": "viewer.genre",
+    "pk": 4,
+    "fields": {
+      "name": "Psychologický thirller"
+    }
+  },
+  {
+    "model": "viewer.country",
+    "pk": 1,
+    "fields": {
+      "name": "Francie"
+    }
+  },
+  {
+    "model": "viewer.country",
+    "pk": 2,
+    "fields": {
+      "name": "USA"
+    }
+  },
+  {
+    "model": "viewer.creator",
+    "pk": 1,
+    "fields": {
+      "name": "Frank",
+      "surname": "Darabont",
+      "artistic_name": null,
+      "date_of_birth": "1959-01-28",
+      "date_of_death": null,
+      "country": 1,
+      "biography": "Rodený Francúz, režisér-scenárista-producent-šéf výroby Frank Darabont, je povestný tým, že kamarátom (alebo za dobrý plat) rád vypomáha s neoficiálnymi prácami na scenároch. Prsty má v Mannovom COLLATERAL, ale záchranné práce robil aj na Branaghovom FRANKENSTEINOVI, MASKE s Jimom Carreym a Spielbergovom VOJAKOVI RYANOVI. Ako scenárista je podpísaný pod NOČNOU MOROU 3 Chucka Russella, ktorému napísal aj sci-fi horor THE BLOB (1988). Písal MUCHU 2, televízne PRÍBEHY Z HROBKY, televíznu show DOBRODRUŽSTVÁ MLADÉHO INDIANA JONESA. Ale nie vždy to ide, napokon ako scenárista zlyhal na prácach na Indiana Jones 4 a Mission: Impossible 3.\r\n\r\nAko režisér debutoval (horor podľa Kinovej poviedky THE WOMAN IN THE ROOM je krátkometražný a BURIED ALIVE točený pre TV) nehororovou novelou Stephena Kinga THE SHAWSHANK REDEMPTION, ktorú si aj zadaptoval. S pestrou galériou výrazných hereckých prejavov natočil film, ktorý nemajú na poprednom mieste Top 10 len užívatelia ČSFD. Bol nominovaný na X Oscarov, ale v konkurencii Forresta Gumpa nemal šancu. Až po uvedení na VHS a do TV sa stal príbeh večnej nádeji, vyhľadávaným a zbožňovaným.\r\n\r\nZa druhý režijný počin si vybral nehororovú novelu Stephena Kinga ZELENÁ MÍĽA, na čo slávny spisovateľ s úsmevom reagoval, že Darabont má najužšiu žánrovú špecializáciu na svete - \"Točí filmy podľa kníh Stephena Kinga, odohrávajúcich sa v base\". Film mal vyšší rozpočet a slávnejšie herecké obsadenie (Tom Hanks), objavil takmer oscarového Michaela Clarka Duncana a aj on sa spoľahlivo stal miláčikom davov, bol strhujúci aj dojemný a získal 4 oscarové nominácie. Nasledovala caprovská smutná komédia MAJESTIC, kde po Weirovi a Formanovi mal dostatok odvahy ukázať, že Jim Carrey je vynikajúci dramatický herec. Film nezaznamenal výrazný úspech a u nás putoval do požičovní.\r\n\r\nPodobne, ako napr. režírujúci scenárista David Koepp, ani Darabont nie je \"normálnym\" hercom; objavuje sa vo vďačných cameo roličkách, ako vtip pre pozorného diváka; zahliadnuť ste ho mohli v televíznej mini sérii Stephena Kinga THE SHINING (King nikdy nebol spokojný s Kubrickovou verziou a tak si v 1997 s Mickom Garrisom natočil vlastný film) alebo v Carpenterových UPÍROCH. Zaujímavejší je pohľad na jeho produkciu. Okrem Míle a Majesticu produkoval aj \"cudzie\" filmy - spomínaný Collateral, SALTON SEA o pomste Vala Kilmera alebo TV mini sériu VEC.",
+      "created": "2025-06-03T06:56:01.641Z",
+      "updated": "2025-06-03T06:56:01.641Z"
+    }
+  },
+  {
+    "model": "viewer.creator",
+    "pk": 2,
+    "fields": {
+      "name": "Tim",
+      "surname": "Robbins",
+      "artistic_name": null,
+      "date_of_birth": "1958-10-16",
+      "date_of_death": null,
+      "country": 2,
+      "biography": "Timothy Francis Robbins sa síce narodil v slnečnej Kalifornii, ale iba málokedy hráva vo vyložených komédiách. Pristanú mu záporné úlohy alebo smutné kladné, ktoré sa niečím v živote previnili, ale zvyknú si to dramatizovať oveľa viac, ako je možno potrebné. Veď kto by zabudol na mladučkého bankového úradníka Andyho Dufresnea z adaptácie novely Stephena Kinga VYKÚPENIE Z VÄZNICE SHAWSHANK? „Nestlačil som spúšť, ale svojim spôsobom som ju naozaj zabil. Odohnal som ju.“ Práve sympatický Andy, ktorý sa správa, ako keby vo väzení nebol doživotne, ale iba na návšteve, tomuto vysokánskemu hercovi (1.96 metra) pravdepodobne prepožičal závoj nesmrteľnosti. Zveličene by sa dalo povedať, že Robbins môže nakrúcať akékoľvek hlúposti a tolerantnosť divákov, milujúcich Darabontov film, bude viac-menej nekonečná. Od toho roku (1994) nenakrútil nič, čo by až natoľko divákov utkvelo v spomienkach - a predsa sa stal živou ikonou. Postavy, ktoré si uchovávajú nádej, nech sa okolo nich deje čokoľvek, si nesmrteľnosť nielenže zaslúžia, ale sú k nej tak nejako automaticky „odsúdené“. Dodajme že Shawshank bol nominovaný na sedem Oscarov, ale napokon nezískal ani jedného, pričom Robbins nebol ani nominovaný.\r\n\r\nRobbins však nie je iba Andy, takže sa na toto originálneho herca pozrime bližšie. Má brata Davida a sestru Adele. Talent zdedil po otcovi Gillovi, tiež hercovi a zároveň aj spevákovi. Už počas strednej školy začal mladý Tim hrať v divadlách (prípadne ich osvetľovať). Patrí k tým, ktorí uprednostňujú dotyk praxe pred škrobenosťou škôl, keďže predčasne ukončil štúdium na New York University a radšej išiel robiť umenie priamo na ulicu. Napokon sa ale k štúdium vrátil. Študoval nie len drámu na University of California, ale dokonca pre štúdium herectva odišiel až do Francúzska! Vyvrcholilo to na začiatku 80. rokov, kedy dokonca založil divadelnú skupinu s názvom The Actor´s Gang, v ktorej nie len hral, ale skúšal sám seba (úspešne) pasovať aj do pozície režiséra a scenáristu (častá spolupráca s Adamom Simonom). S týmto súborom Robbins cestoval dokonca až do Škótska. Dodajme, že je aj hudobník a filmový producent (vlastní Havoc Inc.).\r\n\r\nCez vedľajšie postavy v populárnych seriáloch („Moonlighting“ s Cybill Shepherdovou & Bruceom Willisom) sa prebojoval do celovečerných filmov. To už sa blížila takmer polovica 80. rokov, ale Robbins sa nikam neponáhľal a skúšal všeličo. Hral podpornú rolu v hite Tonyho Scotta a Toma Cruisea TOP GUN, v neslávnom fantazijnom prepadáku Willarda Huycka KÁČER HOWARD, prípadne u „športového režiséra“ Rona Sheltona v basketbalovom BULL DURHAM s Kevinom Costnerom a Susan Sarandonovou. Skutočný úspech však dosiahol až drámou Adriana Lynea JAKUBOV REBRÍK, kde stelesnil vietnamského veterána. Po spolupráci so Spikeom Leeom (HORÚČKA DŽUNGLE) ho Robert Altman obsadil do titulnej úlohy slávneho HRÁČA, za čo herec obdržal na festivale v Cannes cenu. S Altamnom sa ešte stretol na jeho kúskoch KRÁTKE STRIHY (a.k.a. Short Cuts) a PRET-A-PORTER. Po pobyte v Shawshanku mu prišiel vhod jeho uvoľnenejší režijný debut BOB ROBERTS, ku ktorému si napísal nie len scenár, ale je so spomenutým bratom Davidom je aj autorom pesničiek.\r\n\r\nĎalší vynikajúci výkon z pozície režiséra podal drámou MŔTVY MUŽ PRICHÁDZA podľa knihy Helen Prejeanovej. Odolal pokušeniu a namiesto seba obsadil do úlohy po zelenej míli idúceho vraha rebelanta Seana Penna a do úlohy sestry svoju vlastnú manželku (od roku 1988) Susan Sarandonovú. Za tento výkon si odniesol nie len nomináciu na Oscara v kategórii najlepšia réžia, ale aj nomináciu na Zlatý glóbus za scenár, ktorý napísal (navyše film kryl aj ako producent).\r\n\r\nAby si oddýchol, prijal v roku 1997 odpočinkovú rolu neverou totálne zničeného reklamného agenta v komédii NIET ČO STRATIŤ, kde vytvoril nesúrodý (už len pre tú výšku) pár s Martinom Lawrenceom. Vďačnú príležitosť dostal aj v zimomriavky vzbudzujúcej úlohe potencionálneho teroristu, žijúceho so svojou manželkou (Joan Cusacková) nenápadne na pokojnom americkom predmestí. Ďalším odpočinkom, ktorý ale po finančnej stránke vyhorel, bolo ambiciózne sci-fi Briana De Palmu MISIA NA MARS. Tu po boku iných hercov (Connie Nielsenová, Gary Sinise) stelesnil kapitána astronautického výsadku, majúceho za úlohu zistiť, či je na Marse život. Jeho následný režisérsky (a scenáristický a produkčný) počin THE CRADLE WILL ROCK nevyšiel. Mihol sa ako prezident v brutálnej komédii Mikea Myersa AUSTIN POWERS 2: ŠPIÓN, KTORÝ MA PRETIAHOL. Zahral si v sviežej romantike Stephena Frearsa SEX, DIEVČATÁ, ČOKOĽVEK (a.k.a. Všetky moje lásky), kde hrali hlavné úlohy Iben Hjejleová / John Cusack. Rok 2001 sa niesol v znamení spolupráce so šialeným scenáristom Charliem Kaufmanom na bláznivej komédii ZLEZ ZO STROMU, kde si zahral vedca, výnimočného tým, že sa snaží naučiť myši ľudskému stolovaniu, ktorého život ale naruší stretnutie s istým Puffom (Rhys Ifans).\r\n\r\nVeľmi úspešný bol rok 2004, kedy v réžii herca Clinta Eastwooda stelesnil po boku Kevina Bacona, Seana Penna a Laurencea Fishburnea lákavú, náročnú a vďačnú kreáciu muža, ktorý sa v detstve stal obeťou pedofilného únosu a na staré kolená sa stáva hlavným podozrivým zo spáchania ohavnej vraždy dospievajúceho dievčaťa (Emmy Rossumová). Za výkon v tejto cenenej adaptácii románu spisovateľa Dennisa Lehanea si odniesol Oscara nie len Penn, ale už aj Robbins (a film získal ďalšie štyri nominácie). V roku 2005, teda takmer dvadsať rokov od TOP GUN, sa stretol s Tomom Cruiseom vo vedľajšej ale neprehliadnuteľnej úlohe úspešného sci-fi thrilleru Stevena Spielberga VOJNA SVETOV. Strihol si tu roličku Harlana Ogilvyho, potencionálneho blázna, ukrývajúceho sa pred agresívnymi mimozemšťanmi v pivnici, kde na čas prichýli Cruisea a jeho dcérku (Dakota Fanningová), s ktorou má nekalé úmysly. K filmu narozprával komentár Morgan Freeman, herec, ktorý s ním absolvoval dlhý a vyčerpávajúci pobyt v Shawshanku.\r\n\r\nDodajme, že so Sarandonovu zatiaľ majú dve deti a že bol nejaký čas horúcim kandidátom na rolu gaunera Dr. Dooma v komixovej adaptácii Fantastickej štvorky. Z jeho ďalších úloh, starších aj novších, každopádne výrazných, spomeňme variáciu na Billa Gatesa v jednom z najrealistickejších „počítačových thrillerov“ ELITA, film ERIK THE VIKING v réžii montypythona Terryho Jonesa, ZÁSKOK bratov Coenovcov a po boku Paula Newmana, romantiku IQ s Meg Ryanovou a Walterom Mattheuaom",
+      "created": "2025-06-03T06:57:59.057Z",
+      "updated": "2025-06-03T06:57:59.057Z"
+    }
+  },
+  {
+    "model": "viewer.creator",
+    "pk": 3,
+    "fields": {
+      "name": "Morgan",
+      "surname": "Freeman",
+      "artistic_name": null,
+      "date_of_birth": "1937-06-01",
+      "date_of_death": null,
+      "country": 2,
+      "biography": "Uznávaná hollywoodská veličina je odedávna přitahována širým obzorem, létacími stroji a vesmírem. Doma si suší Oscara a touží po roli v bláznivé komedii.\r\n\r\nVysoký, postarší, černý herec s klidným výrazem a vyzrálým hlasem rozhodně nepatří k těm, kteří by zásobovali média svými výstřednostmi a aférami jakéhokoli druhu. Vyhledávaným hercem se stal až po čtyřicítce, skutečné slávy dosáhl po padesátce, takže téměř půlstoletí jeho života zůstává skryto. Vyjadřuje se jedině k filmovým problémům a dnes už si nikdo ani nedovoluje pokládat mu jiné otázky.\r\n\r\nNarodil se v těžkých životních podmínkách v Mephisu, krátce před tím než propukla druhá světová válka. V mládí se potýkal s alkoholem, na němž skončilo jeho první manželství, ačkoli se poprvé oženil až ve třiceti. Podruhé mu už bylo skoro padesát a toto manželství trvá dodnes. Má dva syny, dvě dcery, desítku vnoučat a přebírá ceny za celoživotní přínosy do filmového světa.\r\n\r\nOd dětství miloval film i oblaka, toužil po tom stát se pilotem a jako mechanik strávil několik let (1955 – 1959) u amerického letectva. Nakonec se své dobrodružné sny rozhodl realizovat skrze film. Po příchodu do Los Angeles v roce 1959 pracoval jako pomocný kancelářský úředník a studoval herectví na Los Angeles Community College, později v Pasadena Playhouse. Hned po tom ještě absolvoval u tanečního instruktora Matta Mattoxe v New Yorku. V polovině šedesátých let odstartovala jeho jevištní kariéra. Debutoval v černošské verzi muzikálu Hello, Dolly (1968) na Broadwayi. Svůj talent naplno rozvíjel od muzikálu přes shakespearovská díla až po moderní dramata, což okomentoval „nelituji toho, protože na jevišti jsem načerpal spoustu zkušeností, které se mi velice hodily v práci před kamerou.“ Živil se jako profesionální tanečník, člen kočovné divadelní společností a téměř nepatrnými rolemi ve filmech.\r\n\r\nZačal pracovat v televizi, v roce 1971 se objevil v dětské dobrodružné podívané Kdo říká, že neumím jezdit na duze? a především nastoupil do pravidelného účinkování v dětské show The Electric Company, například po boku černošského komika Billa Cosbyho. V pořadu pro děti, které mají potíže se čtením vystupoval sedm let v roli Easy Readera, hraběte Draculy a mnoha dalších postav. Dostal se tak do diváckého povědomí, natočil pár televizních snímků, ale ještě dlouho čekal na pořádnou filmovou příležitost, která přišla v roce 1980 ve vězeňském dramatu Brubaker s Robertem Redfordem a v Očitém svědkovi se Sigourney Weaver, kde si zahrál prvního z dlouhé řady policistů a detektivů. Ty v osmdesátých letech pravidelně střídal se zápornými postavami až mu jedna z nich – postava nebezpečného newyorského pasáka vynesla nominaci na Oscara (Chytrák, 1987).\r\n\r\nJedna ruka s úspěchem\r\n\r\n„Myslím si, že úspěch vznikl v pravou chvíli – tehdy, když měl přijít. Kdyby se to stalo dřív, možná bych nedozrál k rolím, které pro mne hodně znamenají. A také by mne možná zničil.“ Rok 1989 mu přinesl několik podstatných rolí. Vystřihnul si arogantního ředitele střední školy v dramatu Lean on Me, v historickém dramatu z občanské války (Glory) si s Denzelem Washingtonem a Matthewem Broderickem zahráli důstojníky a Freeman na něj dodnes rád vzpomíná „Nevím, který z mých filmů je můj nejoblíbenější, ale myslím, že nejdůležitější byl Glory.“ Druhou oscarovou nominaci a vstup do nejširšího diváckého povědomí znamenala nostalgicky pojatá komedie Řidič slečny Daisy o vztahu věrného černošského šoféra a jeho zaměstnankyně, staré židovské vdovy z Atlanty, která v něm nakonec nalezne nejbližšího přítele.\r\n\r\nDobrých nabídek od té doby přibývalo a stále přibývá. Zahrál si v dobrodružném kousku s Kevinem Costnerem Král zbojníků Robin Hood, to mu bylo už 54 let a stával se nestárnoucím hercem devadesátých let. Rok na to Freeman trávil čas v Africe, když přišla nečekaná nabídka od jeho přítele Clinta Eeastwooda na roli ve westernu Nesmiřitelní. Vedle toho se zařadil mezi režírující herce a debutoval dramatem Bopha!, odehrávajícím se v Jihoafrické republice během apartheidu a líčícím osudy černého policisty (Danny Glover) a jeho rodiny. Příliš úspěšné však nebylo a Morgan Freeman se už od té doby drží výhradně druhé strany kamery. Do poloviny tohoto desetiletí získal už třetí oscarovou nominaci, tentokrát za odsouzeného vraha, který se proměňuje z životního cynika v muže nacházejícího ztracenou víru v lidství (Vykoupení z věznice Shawshank). Následoval jeden z jeho nejslavnějších detektivů - Somerset z thrilleru Sedm a důstojník ze Smrtící epidemie v tomtéž roce. Ve slušnou známost vešel i kriminalista Dr. Alex Cross, kterého si zahrál dokonce dvakrát. Poprvé jsme se sním setkali ve Sběrateli polibků (1997) a podruhé v Jako pavouk (2001). Nestal se armádním pilotem, jak si přál, ale svět filmu mu nabídl role vysokých důstojníků (Pavučina snů, Smrtící epidemie).\r\n\r\nPoklidné stárnutí mezi oblaky, filmy a sny\r\n\r\nHraje množství rolí, které nejsou napsány výhradně pro Afroameričana a od poloviny devadesátých let je většinou obsazován do úloh stárnoucích distingovaných gentlemanů. Když tvůrci Drtivého dopadu hledali ideálního představitele pro prvního černého prezidenta Spojených států, nemohl jím být lépe nikdo jiný, než Morgan Freeman. V komedii Božský Bruce dodal tvář samotnému Bohu. V Sestřičce Betty ztělesnil pro změnu nájemného vraha, který do tajů řemesla zaučuje svého synka. Rozhodně se nezastavuje ani v osmašedesáti letech a do filmografie si dopisuje tituly jako Batman začíná. Nato se objevil u Luka Bessona v sentimentálním thrilleru s Jetem Li Utržený z řetězu a na příští rok má rozdělané čtyři projekty. Jeho loď, na níž mu nezbývalo nikdy moc času, bude asi kotvit ještě nějaký čas opuštěná v Karibiku. Zdá se, že pro Freemana má před zábavou stále přednost například jeho produkční společnost Revelation Entertainment a bluesový klub Ground Zero, který otevřel před pár lety v mississippském Clarksdale.\r\n\r\nŽije v Charlestonu v Mississippi a řeší potíže se svou žádostí o registraci jména Morgan Freeman jako obchodní značky. Loni byl dokonce zatčen a dostal zákaz létání, když si se svým letadlem bez povolení věže klidně přistál na letišti v New Jersey. Bez pochyb se zařadil mezi uznávané hollywoodské osobnosti, ale pravý hollywodský Oscar mu stále scházel. Nepřibližoval se mu ani svým vysněným a stále odkládaným dramatem o Nelsonu Mandelovi Long Walk to Freedom. Až letos svou čtvrtou nominaci proměnil ve zlatou sošku a to díky dalšímu filmu u Clinta Eastwooda, Million Dollar Baby, kde ztvárnil trenéra mladé boxerky.\r\n\r\nSplnil si sny o létání i filmování, ještě ale plánuje výlet do vesmíru. Nedávno podepsal dohodu, že se zúčastní první vesmírné, turistické cesty se společností, která již buduje flotilu vesmírných plavidel pro komerční účely. Hodlá zaplatit pouhého čtvrt milionu dolarů za to, že bude jedním z osmi pasažérů rakety, jenž odstartuje v roce 2008. Snad se mu někde mezi planetami nezalíbí natolik, aby se rozhodl začít hrát u mimozemské konkurence.",
+      "created": "2025-06-03T06:58:35.672Z",
+      "updated": "2025-06-03T06:58:35.672Z"
+    }
+  },
+  {
+    "model": "viewer.creator",
+    "pk": 4,
+    "fields": {
+      "name": "Bob",
+      "surname": "Gunton",
+      "artistic_name": null,
+      "date_of_birth": "1945-11-15",
+      "date_of_death": null,
+      "country": 2,
+      "biography": "Narodil se jako Robert Patrick Gunton Jr. V letech 1969-1971 se dostal do americké armády a bojoval ve Vietnamu, kde dostal bronzovou medaili za udatnost. Dvakrát dostal nominaci na cenu Tony za role v muzikálech \"Evita\" (1980), kde hrál Juana Dominga Peróna a \"Sweeney Todd\", kde hrál titulní roli. Vyhrál cenu Drama Desk za roli v muzikálu \"Evita\" a cenu Obie za roli v \"How I Got A Story\". Zahrál si ve filmech Glory, Narozen 4. července, JFK, Vykoupení z vězniče Shawshank a mnoha dalších.",
+      "created": "2025-06-03T06:59:07.134Z",
+      "updated": "2025-06-03T06:59:07.134Z"
+    }
+  },
+  {
+    "model": "viewer.creator",
+    "pk": 5,
+    "fields": {
+      "name": "Thomas",
+      "surname": "Newman",
+      "artistic_name": null,
+      "date_of_birth": "1955-10-20",
+      "date_of_death": null,
+      "country": 2,
+      "biography": "Thomas Montgomery Newman se narodil 20. října 1955 v Los Angeles v americké Kalifornii matce Martha Louise a otci, slavnému skladateli, Alfredu (známému například díky znělce studia 20th Century Fox). Vzdělání získal na univerzitě Yale a v roce 1984 se začal naplno věnovat skládání filmové hudby svým debutem LEHKOMYSLNÍ.\r\n\r\nAž do roku 1994 však nebyl obecně známý, což změnily až dvě nominace na Oscara za snímky MALÉ ŽENY a VYKOUPENÍ Z VĚZNICE SHAWSHANK. Třetí nominací pro něj bylo drama Diane Keaton HRDINOVÉ MÉHO DĚTSTVÍ v roce 1996. Roku 1999 složil hudbu k filmu AMERICKÁ KRÁSA, kde použil v hlavní roli perkusní nástroje, čímž se snažil odlehčit, jak sám uvádí, morální nevhodnost filmu. Za ni pak byl nominován počtvrté. Tímto se však stal dvorním skladatelem režiséra Sama Mendese a pátou nominaci mu tak přinesl Mendesův snímek CESTA DO ZATRACENÍ v roce 2002. Šestou a sedmou nominací se staly filmy HLEDÁ SE NEMO roku 2003 a LEMONY SNICKET: ŘADA NEŠŤASTNÝCH PŘÍHOD v roce 2004.\r\n\r\nPoosmé byl nominován za hudbu k Soderberghovu BERLÍNSKÉMU SPIKNUTÍ v roce 2006, kdy také během úvodního ceremoniálu udělování Oscarů řekl režisér Errol Morris, že Newman byl nominován osmkrát a nikdy Oscara nezískal. Thomas odpověděl, že to bylo pouze sedmkrát, ale dnes je to poosmé. A tak se i skutečně stalo, když zvítězil soundtrack Gustava Santaolally k filmu Babel.\r\n\r\nPo dvouleté pauze složil hudební doprovod k filmu WALL-E (2008) režiséra Andrewa Stantona, za nějž byl nominován nejen za nejlepší hudbu k filmu, ale také za nejlepší filmovou píseň. Obě nominace opět neproměnil a stal se tak nejneúspěšnějším žijícím skladatelským kandidátem na Oscara.\r\n\r\nSvé Oscarové statistiky komentuje slovy: \"Prohry vás zocelují. Líbí se mi být smolařem.\"",
+      "created": "2025-06-03T07:00:27.189Z",
+      "updated": "2025-06-03T07:00:27.189Z"
+    }
+  },
+  {
+    "model": "viewer.movie",
+    "pk": 1,
+    "fields": {
+      "title_orig": "The Shawshank Redemption",
+      "title_cz": "Vykoupení z věznice Shawshank",
+      "length": 142,
+      "description": "Strach dělá z lidí vězně. Naděje jim dává křídla. Film natočený podle novely Stephena Kinga. Strhující příběh o přátelství, naději a moudrosti s velmi výraznými hereckými i charakterovými osobnostmi. Andy Dufresne (Tim Robbins) přichází do vězení v Shawshanku jako nový vězeň podezřelý z vraždy. Spřátelí se s doživotně odsouzeným Redem (Morgan Freeman) a společně se snaží přežít v nelidském prostředí vězeňského systému. Odmítají upadnout do rezignace a dodávají naději sobě i spoluvězňům. Film získal mnoho ocenění filmové kritiky a díky svému hluboce humánnímu poselství, skvělým hereckým výkonům a působivému zpracování byl 7 x nominován na Oscara - za nejlepší film, herce v hlavní roli (Morgan Freeman), nejlepší scénář, kameru, hudbu, střih a zvuk.",
+      "year": 1994,
+      "created": "2025-06-03T07:05:01.948Z",
+      "updated": "2025-06-03T07:05:01.948Z",
+      "genres": [
+        2,
+        1
+      ],
+      "directors": [
+        1
+      ],
+      "actors": [
+        3,
+        4,
+        2
+      ],
+      "composers": [
+        5
+      ],
+      "countries": [
+        2
+      ]
+    }
+  }
+]

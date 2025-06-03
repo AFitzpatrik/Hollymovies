@@ -188,7 +188,7 @@ python manage.py createsuperuser
 - [x] Movie
   - [x] title_orig (String)
   - [x] title_cz (String)
-  - [x genres (n:m -> Genre) # ManyToManyField(Genre, blank=True, related_name='movies')
+  - [x genres (n:m -> Genre) # ManyToManyField(Genre, blank=True, related_name='mnovies')
   - [x] directors (n:m -> Creator)
   - [x] actors (n:m -> Creator)
   - [x] composers (n:m -> Creator)
@@ -196,6 +196,28 @@ python manage.py createsuperuser
   - [x] description (String)
   - [x] year (Integer)
   - [x] countries (n:m -> Country)
+
+
+### DUMP/LOAD Databáze
+''' bash
+pip install django-dump-load-utf8
+pip freeze > ./requirements.txt
+'''
+
+Přidáme "django_dump_load_utf8", do seznamu nainstalovaných aplikací.
+"INSTALLED_APPS" v souboru 'settings.py'
+
+#### DUMP
+'''bash
+python manage.py dumpdatautf8 <nazev_aplikace> --output <cesta_k_souboru>
+'''
+
+
+#### LOAD
+
+'''bash
+python manage.py loaddatautf8 <cesta_k_souboru>
+''''
 
 
 
