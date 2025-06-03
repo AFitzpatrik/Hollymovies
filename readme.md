@@ -217,6 +217,7 @@ python manage.py dumpdatautf8 <nazev_aplikace> --output <cesta_k_souboru>
 
 '''bash
 python manage.py loaddatautf8 <cesta_k_souboru>
+python manage.py loaddatautf8 .\files\fixtures.json
 ''''
 
 
