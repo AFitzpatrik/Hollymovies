@@ -25,7 +25,26 @@
 - Domácí úkol: definovat model Movie
 
 ### Pátek, 30. května · 17:30–21:00
+- Prošli jsme slidy 28-36
+- viewer.models.py
+  - Movie 
+- Panel administrátora
+- Vkládání dat přes panel administrátora
+- DUMP/LOAD databáze (v utf8)
+- Dotazy (Queries)
+
 ### Pondělí, 2. června · 17:30–21:00
+- Prošli jsme slidy 37-50
+- Manipulace s daty
+  - Create - vytvoření
+  - Update - aktualizace
+  - Delete - mazání
+- Templates 
+  - včetně inheritance (dědičnosti)
+  - včetně include (vkládání)
+- Feature 1 - seznam filmů
+- Feature 2 - detail filmu
+
 ### Úterý, 3. června · 17:30–21:00
 ### Čtvrtek, 5. června · 17:30–21:00
 ### Pátek, 13. června · 17:30–21:00
@@ -130,23 +149,24 @@ python manage.py createsuperuser
 
 # Projekt Hollymovies
 ## Funkcionalita
-- [ ] 1 seznam filmů (abecedně)
-- [ ] 2 detail filmu 
-  - [ ] originální název
-  - [ ] český název
-  - [ ] režisér
-  - [ ] herci
-  - [ ] skladatel hudby
-  - [ ] délka
-  - [ ] popis
-  - [ ] rok
-  - [ ] země
+- [x] 1 seznam filmů (abecedně)
+- [x] 2 detail filmu 
+  - [x] originální název
+  - [x] český název
+  - [x] žánry
+  - [x] země
+  - [x] režiséři
+  - [x] herci
+  - [x] skladatel hudby
+  - [x] délka
+  - [x] rok
+  - [x] popis
+- [ ] 2.1 další informace o filmu 
   - [ ] hodnocení
   - [ ] ocenění
   - [ ] obrázky
   - [ ] návštěvnost v kinech (https://kinomaniak.cz/)
   - [ ] VOD (https://www.kinobox.cz/)
-  - [ ] žánr
   - [ ] trailer
   - [ ] kde se odehrává film
 - [ ] 3 filtrování filmů
@@ -169,7 +189,6 @@ python manage.py createsuperuser
 
 ## Databáze
 ![ER diagram](./files/ER_diagram_v1.png)
-
 - [x] Genre
   - [x] name (String)
 - [x] Country
@@ -182,13 +201,13 @@ python manage.py createsuperuser
   - [x] date_of_death (Date)
   - [x] country (FK -> Country)
   - [x] biography (String)
-  - [x] acting (n:m -> Movie) - related_name z modulu Movie
+  - [x] acting (n:m -> Movie) - related_name z modelu Movie
   - [x] directing (n:m -> Movie) - related_name z modelu Movie
   - [x] composing (n:m -> Movie) - related_name z modelu Movie
 - [x] Movie
   - [x] title_orig (String)
   - [x] title_cz (String)
-  - [x genres (n:m -> Genre) # ManyToManyField(Genre, blank=True, related_name='mnovies')
+  - [x] genres (n:m -> Genre) # ManyToManyField(Genre, blank=True, related_name='movies')
   - [x] directors (n:m -> Creator)
   - [x] actors (n:m -> Creator)
   - [x] composers (n:m -> Creator)
@@ -197,73 +216,167 @@ python manage.py createsuperuser
   - [x] year (Integer)
   - [x] countries (n:m -> Country)
 
-
-### DUMP/LOAD Databáze
-''' bash
+### DUMP/LOAD databáze
+```bash
 pip install django-dump-load-utf8
-pip freeze > ./requirements.txt
-'''
+```
 
-Přidáme "django_dump_load_utf8", do seznamu nainstalovaných aplikací.
-"INSTALLED_APPS" v souboru 'settings.py'
+Přidáme `'django_dump_load_utf8',` do seznamu nainstalovaných aplikací
+`INSTALLED_APPS` v souboru `settings.py`.
 
 #### DUMP
-'''bash
+```bash
 python manage.py dumpdatautf8 <nazev_aplikace> --output <cesta_k_souboru>
-'''
-
+```
 
 #### LOAD
-
-'''bash
+```bash
 python manage.py loaddatautf8 <cesta_k_souboru>
-python manage.py loaddatautf8 .\files\fixtures.json
-''''
-
+```
 
 ### Dotazy (Queries)
 #### Import modelů
-"from viewer.models import *"
+`from viewer.models import *`
 
 #### .all()
-- Vrací kolekci všech nalezených záznamů z dané tabulky:
-"Movie.objects.all()"
-"Creator.objects.all()"
+Vrací kolekci všech nalezených záznamů z tabulky:
+
+`Movie.objects.all()`
 
 #### .get()
-- Vrátí jeden nalezený záznam, kdyby bylo víc záznamů se stejným hledáním, vrátí se pouze ten první záznam
-"Movie.objects.get(id=1)"
+Vrátí jeden nalezený záznam (první, který splňuje podmínku):
+
+`Movie.objects.get(id=1)`
+
+`Genre.objects.get(name='Drama')`
 
 #### .filter()
-Vrací kolekc záznamů, které splňují podmínky:
-"Movies.objects.filter(id=1)"
-"Movies.objects.filter(year=1994)"
-"Creator.objects.filter(date_of_birth__year=1955)"
-"Creator.objects.filter(date_of_birth__year__gt=1955)" #__gt = greater than (vetší nez)
-"Creator.objects.filter(date_of_birth__year__gt=1955)" #__gte = greater than equal (větší než nebo rovno)
-"Creator.objects.filter(date_of_birth__year__lt=1955)" #__lt = less than (měnsí nez)
-"Creator.objects.filter(date_of_birth__year__lt=1955)" #__lte = less than equal (měnsí nez nebo rovno)
+Vrací kolekci záznamů, které splňují podmínky:
 
-Výpis všech filmů které mají žánr drama:
+`Movie.objects.filter(id=1)`
 
-drama = Genre.objects.get(name="Drama")
-Movie.objects.filter(genres=drama)
+`Movie.objects.filter(title_orig="The Green Mile")`
+
+`Movie.objects.filter(year=1994)`
+
+`Creator.objects.filter(date_of_birth__year=1955)`
+
+`Creator.objects.filter(date_of_birth__year__gt=1955)` -- `__gt` => "větší než" (greater then)
+
+`Creator.objects.filter(date_of_birth__year__gte=1955)` -- `__gte` => "větší rovno" (greater then equal)
+
+`Creator.objects.filter(date_of_birth__year__lt=1955)` -- `__lt` => "menší než" (less then)
+
+`Creator.objects.filter(date_of_birth__year__lte=1955)` -- `__lte` => "menší rovno" (less then equal)
+
+Výpis všech filmů, které mají žánr "Drama":
+
+`drama = Genre.objects.get(name='Drama')`
+
+`Movie.objects.filter(genres=drama)`
 
 nebo:
 
-"Movie.objects.filter(genres=Genre.objects.get(name="Drama"))"
+`Movie.objects.filter(genres=Genre.objects.get(name='Drama'))`
 
 nebo:
 
-"drama = Genre.objects.get(name="Drama")"
-"drama.movies.all()"
+`Movie.objects.filter(genres__name='Drama')`
 
-Herci daného filmu:
+nebo:
 
-"movie = Movie.objects.get(title_orig="Forrest Gump")"
-"movie.actors.all()"
+`drama = Genre.objects.get(name='Drama')`
 
-Všechny filmy, ve kterch hrál Tom Hanks:
-"tom = Creator.objects.get(name="Tom", surname="Hanks")
-"tom.acting.all()"
+`drama.movies.all()`
 
+Herci filmu Forrest Gump:
+
+`movie = Movie.objects.get(title_orig='Forrest Gump')`
+
+`movie.actors.all()`
+
+Všechny filmy, ve kterých hrál Tom Hanks:
+
+`tom = Creator.objects.get(name='Tom', surname='Hanks')`
+
+`tom.acting.all()`
+
+Všichni tvůrci z Francie:
+
+`france = Country.objects.get(name='Francie')`
+
+`france.creators.all()`
+
+Všechny filmy, které obsahují v názvu "Gump":
+
+`Movie.objects.filter(title_orig__contains='Gump')`
+
+Vícenásobné filtry:
+
+`Movie.objects.filter(genres__name='Drama', year=1999)` -- více podmínek, defaultně AND
+
+`Movie.objects.filter(genres__name='Drama').filter(year=1999)` -- metody lze řetězit za sebe
+
+"in":
+
+`Movie.objects.filter(title_orig__in=['Forrest Gump', 'The Green Mile'])`
+
+#### .exclude()
+`Movie.objects.exclude(title_orig__in=['Forrest Gump', 'The Green Mile'])`
+
+#### .exists()
+
+`Movie.objects.filter(year=1994).exists()` -- zda existuje nějaký film z roku 1994
+
+#### .count()
+
+`Movie.objects.filter(year=1994).count()` -- počet filmů z roku 1994
+
+#### .order_by()
+
+`Movie.objects.all()`
+
+`Movie.objects.all().order_by('year')`
+
+`Movie.objects.all().order_by('-year')`
+
+#### Agregační funkce:
+
+`from django.db.models import Avg, Min, Max`
+
+`Movie.objects.aggregate(Avg('length'))` -- průměrná délka filmů
+
+`Movie.objects.aggregate(Avg('length'), Min('length'), Max('length'))`
+
+#### group_by:
+
+`from django.db.models import Count`
+
+`Movie.objects.values('genres').annotate(count=Count('genres'))`
+
+### Manipulace s daty
+#### .create:
+
+`Country.objects.create(name="Rakousko")`
+
+nebo:
+
+`italy = Country(name="Itálie")`
+
+`italy.save()`
+
+#### .update()
+
+`Movie.objects.filter(released__year=2000).update(rating=5)`
+
+nebo:
+
+`forrest = Movie.objects.get(title_orig='Forrest Gump')`
+
+`forrest.length = 152`
+
+`forrest.save()`
+
+#### .delete()
+
+`Genre.objects.get(name='Horror').delete()`
