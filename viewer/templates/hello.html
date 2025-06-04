@@ -7,5 +7,13 @@
 <body>
 <h1>Hello, {{ name }}</h1>
 <h2>Welcome to HollyMovies!</h2>
+{% for adjectives in adjectives%}
+    {% if adjectives != 'cruel' %}
+        Hello, {{ adjectives }} world!<br>
+    {% endif %}
+{% empty %}
+    Není zde žádný záznam.
+
+{% endfor %}
 </body>
 </html>
