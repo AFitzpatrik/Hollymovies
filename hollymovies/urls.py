@@ -18,16 +18,27 @@ from django.contrib import admin
 from django.template.defaultfilters import add
 from django.urls import path
 
-from viewer.views import hello, hello2, hello3, hello4, add2
+from viewer.views import movies, home, movie
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('hello/', hello),
+    path('movies/', movies, name='movies'),
+
+    path('',home, name='home'),
+
+    path('movie/<int:pk>/', movie, name='movie')
+
+]
+
+
+
+'''    path('hello/', hello),
     path('hello2/<str:s>/', hello2),
     path('hello3', hello3),
     path('hello4/<str:s>', hello4),
 
     path('add/<int:num1>/<int:num2>/', add),
     path("add2", add2),
-]
+    
+'''

@@ -1,37 +1,18 @@
-from django.http import HttpResponse
+from django.shortcuts import render
+
+from viewer.models import Movie
 
 
-def hello(request):
-    return HttpResponse("Hello World!")
+def home(request):
+    return render(request, 'home.html')
+
+def movies(request):
+    movies_list = Movie.objects.all()
+    context = {'movies': movies_list}
+    return render(request, 'movies.html', context)
 
 
-def hello2(request, s):
-    return HttpResponse(f"Hello, {s} World!")
-
-
-def hello3(request):
-    s = request.GET.get('s', '')
-    return HttpResponse(f"Hello, {s} World!")
-
-
-def hello4(request, s):
-    t = request.GET.get('t', '')
-    return HttpResponse(f"Your words: {s}, {t}")
-
-
-def add(request, num1, num2):
-    return HttpResponse(f"{num1} + {num2} = {num1+num2}")
-
-# Domácí úkol:
-# Napsat funkci add2, která bude sčítat,
-# ale parametry bude načítat pomocí kódování URL
-# Např.: http://127.0.0.1:8000/add2?num1=2&num2=3 -> 2 + 3 = 5
-# Např.: http://127.0.0.1:8000/add2               -> 0 + 0 = 0
-# Např.: http://127.0.0.1:8000/add2?num1=2        ->
-
-
-
-def add2(request):
-    num1 = int(request.GET.get('num1', 0)),
-    num2 = int(request.GET.get('num2', 0)),
-    return HttpResponse(f"{num1} + {num2} = {num1+num2}")
+def movie(request, pk): #pk = primary key
+    if Movie.objects.filter(id=pk).exists():
+        return render(request, 'movie.html', {'movie': Movie.objects.get(id=pk)})
+    return render(request, 'home.html')

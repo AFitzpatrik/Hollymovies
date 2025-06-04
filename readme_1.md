@@ -168,29 +168,112 @@ python manage.py createsuperuser
   - [ ] obrázky
 
 ## Databáze
+![ER diagram](files/ER_diagram_v1.png)
+
 - [x] Genre
   - [x] name (String)
-- [ ] Country
-  - [ ] name (String) 
-- [ ] Creator
-  - [ ] name (String)
-  - [ ] surname (String)
-  - [ ] artistic_name (String)
-  - [ ] date_of_birth (Date)
-  - [ ] date_of_death (Date)
-  - [ ] country (FK -> Country)
-  - [ ] biography (String)
-- [ ] Movie
-  - [ ] title_orig (String)
-  - [ ] title_cz (String)
-  - [ ] genres (n:m -> Genre) # ManyToManyField(Genre, blank=True, related_name='movies')
-  - [ ] directors (n:m -> Creator)
-  - [ ] actors (n:m -> Creator)
-  - [ ] composers (n:m -> Creator)
-  - [ ] length (Integer) (minuty)
-  - [ ] description (String)
-  - [ ] year (Integer)
-  - [ ] countries (n:m -> Country)
+- [x] Country
+  - [x] name (String) 
+- [x] Creator
+  - [x] name (String)
+  - [x] surname (String)
+  - [x] artistic_name (String)
+  - [x] date_of_birth (Date)
+  - [x] date_of_death (Date)
+  - [x] country (FK -> Country)
+  - [x] biography (String)
+  - [x] acting (n:m -> Movie) - related_name z modulu Movie
+  - [x] directing (n:m -> Movie) - related_name z modelu Movie
+  - [x] composing (n:m -> Movie) - related_name z modelu Movie
+- [x] Movie
+  - [x] title_orig (String)
+  - [x] title_cz (String)
+  - [x genres (n:m -> Genre) # ManyToManyField(Genre, blank=True, related_name='mnovies')
+  - [x] directors (n:m -> Creator)
+  - [x] actors (n:m -> Creator)
+  - [x] composers (n:m -> Creator)
+  - [x] length (Integer) (minuty)
+  - [x] description (String)
+  - [x] year (Integer)
+  - [x] countries (n:m -> Country)
 
 
-2:29:13 POKRAČOVNÍ VE VÝUCE BACKENDU
+### DUMP/LOAD Databáze
+''' bash
+pip install django-dump-load-utf8
+pip freeze > ./requirements.txt
+'''
+
+Přidáme "django_dump_load_utf8", do seznamu nainstalovaných aplikací.
+"INSTALLED_APPS" v souboru 'settings.py'
+
+#### DUMP
+'''bash
+python manage.py dumpdatautf8 <nazev_aplikace> --output <cesta_k_souboru>
+'''
+
+
+#### LOAD
+
+'''bash
+python manage.py loaddatautf8 <cesta_k_souboru>
+python manage.py loaddatautf8 .\files\fixtures.json
+''''
+
+
+### Dotazy (Queries)
+#### Import modelů
+"from viewer.models import *"
+
+#### .all()
+- Vrací kolekci všech nalezených záznamů z dané tabulky:
+"Movie.objects.all()"
+"Creator.objects.all()"
+
+#### .get()
+- Vrátí jeden nalezený záznam, kdyby bylo víc záznamů se stejným hledáním, vrátí se pouze ten první záznam
+"Movie.objects.get(id=1)"
+
+#### .filter()
+Vrací kolekc záznamů, které splňují podmínky:
+"Movies.objects.filter(id=1)"
+"Movies.objects.filter(year=1994)"
+"Creator.objects.filter(date_of_birth__year=1955)"
+"Creator.objects.filter(date_of_birth__year__gt=1955)" #__gt = greater than (vetší nez)
+"Creator.objects.filter(date_of_birth__year__gt=1955)" #__gte = greater than equal (větší než nebo rovno)
+"Creator.objects.filter(date_of_birth__year__lt=1955)" #__lt = less than (měnsí nez)
+"Creator.objects.filter(date_of_birth__year__lt=1955)" #__lte = less than equal (měnsí nez nebo rovno)
+
+Výpis všech filmů které mají žánr drama:
+
+drama = Genre.objects.get(name="Drama")
+Movie.objects.filter(genres=drama)
+
+nebo:
+
+"Movie.objects.filter(genres=Genre.objects.get(name="Drama"))"
+
+nebo:
+
+"drama = Genre.objects.get(name="Drama")"
+"drama.movies.all()"
+
+Herci daného filmu:
+
+"movie = Movie.objects.get(title_orig="Forrest Gump")"
+"movie.actors.all()"
+
+Všechny filmy, ve kterch hrál Tom Hanks:
+"tom = Creator.objects.get(name="Tom", surname="Hanks")
+"tom.acting.all()"
+
+Všichni tvůrci z Francie:
+
+"france = Country.objects.get(name="Francie")"
+
+"france.creators.all()"
+
+Všechny filmy, které obsahují v názvu "Gump":
+
+"Movie.objects.filter(title_orig__contains="Gump")"
+
