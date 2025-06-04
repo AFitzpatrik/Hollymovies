@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.template.defaultfilters import add
 from django.urls import path
 
-from viewer.views import movies, home
+from viewer.views import movies, home, movie
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,6 +26,8 @@ urlpatterns = [
     path('movies/', movies, name='movies'),
 
     path('',home, name='home'),
+
+    path('movie/<int:pk>/', movie, name='movie')
 
 ]
 
