@@ -188,7 +188,7 @@ python manage.py createsuperuser
   - [ ] obrázky
 
 ## Databáze
-![ER diagram](./files/ER_diagram_v1.png)
+![ER diagram](files/ER_diagram_v1.png)
 - [x] Genre
   - [x] name (String)
 - [x] Country
