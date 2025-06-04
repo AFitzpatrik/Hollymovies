@@ -326,7 +326,8 @@ Vícenásobné filtry:
 
 #### .exists()
 
-`Movie.objects.filter(year=1994).exists()` -- zda existuje nějaký film z roku 1994
+`Movie.objects.filter(year=1994).exists()` -- zda existuje nějaký film z roku 1994, vrací true/false
+
 
 #### .count()
 
