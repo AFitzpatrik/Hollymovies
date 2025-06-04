@@ -90,3 +90,17 @@ class Movie(Model):
             return f"{self.title_orig} ({self.year})"
         return f"{self.title_orig}"
 
+    def length_format(self):
+        # Převod délky filmu z minut na formát h:mm
+        # 142 min -> 2:22
+        if self.length:
+            return f"{self.length // 60}:{self.length % 60:02d}"
+        return None
+
+    ''' ALTERNATIVNÍ ZÁPIS
+    if self.length:
+            hours = self.length // 60
+            minutes = self.length % 60
+            return f"{hours}:{minutes:02}"
+        return None
+    '''
