@@ -42,6 +42,7 @@ def movie(request, pk):
     return render(request, 'home.html')
 
 
+
 class MovieDetailView(DetailView):
     template_name = 'movie.html'
     model = Movie
