@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Seznam tvůrců
+
+{% endblock %}
+
+
+{% block content %}
+    <h1>Seznam tvůrců</h1>
+    <ul>
+        {% for creator in creators %}
+            <li>
+                {{creator}}
+            </li>
+
+        {% empty %}
+            V databázi není žádný tvůrce.
+
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+
