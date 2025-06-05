@@ -1,25 +1,59 @@
 {% extends 'base.html' %}
 
-
 {% block title %}
     Seznam tvůrců
-
 {% endblock %}
 
-
 {% block content %}
+    {% comment %}
     <h1>Seznam tvůrců</h1>
     <ul>
         {% for creator in creators %}
             <li>
-                {{creator}}
+                {{ creator }}
             </li>
-
         {% empty %}
             V databázi není žádný tvůrce.
+        {% endfor %}
+    </ul>
+    {% endcomment %}
 
+    <h1>Seznam herců</h1>
+    <ul>
+        {% for creator in creators %}
+            {% if creator.acting.all %}
+                <li>
+                    <a href="{% url 'creator' creator.id %}">{{ creator }}</a>
+                </li>
+            {% endif %}
+        {% empty %}
+            V databázi není žádný herec.
+        {% endfor %}
+    </ul>
+
+    <h1>Seznam režisérů</h1>
+    <ul>
+        {% for creator in creators %}
+            {% if creator.directing.all %}
+                <li>
+                    <a href="{% url 'creator' creator.id %}">{{ creator }}</a>
+                </li>
+            {% endif %}
+        {% empty %}
+            V databázi není žádný režisér.
+        {% endfor %}
+    </ul>
+
+    <h1>Seznam skladatelů</h1>
+    <ul>
+        {% for creator in creators %}
+            {% if creator.composing.all %}
+                <li>
+                    <a href="{% url 'creator' creator.id %}">{{ creator }}</a>
+                </li>
+            {% endif %}
+        {% empty %}
+            V databázi není žádný skladatel.
         {% endfor %}
     </ul>
 {% endblock %}
-
-
