@@ -15,30 +15,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.template.defaultfilters import add
 from django.urls import path
 
-from viewer.views import movies, home, movie
+from viewer.views import movies, home, movie, MoviesView, MoviesTemplateView, \
+    MoviesListView, MovieDetailView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('movies/', movies, name='movies'),
-
-    path('',home, name='home'),
-
-    path('movie/<int:pk>/', movie, name='movie')
-
+    path('', home, name='home'),
+    #path('movies/', movies, name='movies'),
+    #path('movies/', MoviesView.as_view(), name='movies'),
+    #path('movies/', MoviesTemplateView.as_view(), name='movies'),
+    path('movies/', MoviesListView.as_view(), name='movies'),
+    #path('movie/<int:pk>/', movie, name='movie'),
+    path('movie/<int:pk>/', MovieDetailView.as_view(), name='movie'),
 ]
-
-
-
-'''    path('hello/', hello),
-    path('hello2/<str:s>/', hello2),
-    path('hello3', hello3),
-    path('hello4/<str:s>', hello4),
-
-    path('add/<int:num1>/<int:num2>/', add),
-    path("add2", add2),
-    
-'''
