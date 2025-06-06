@@ -391,4 +391,4 @@ nebo:
 `Genre.objects.get(name='Horror').delete()`
 
 
-1:23:59
+2:39:16
