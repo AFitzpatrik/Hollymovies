@@ -21,8 +21,6 @@ class MovieDetailView(DetailView):
     context_object_name = 'movie'
 
 
-# ------------------0:56:46
-
 class CreatorsListView(ListView):
     template_name = 'creators.html'
     model = Creator
