@@ -68,3 +68,5 @@ class GenreDetailView(DetailView):
     model = Genre
     context_object_name = 'genre'
 
+
+
