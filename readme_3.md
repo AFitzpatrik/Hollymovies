@@ -46,6 +46,17 @@
 - Feature 2 - detail filmu
 
 ### Úterý, 3. června · 17:30–21:00
+- Prošli jsme slidy 51-55
+- Class-based view
+  - View
+  - TemplateView
+  - ListView
+  - DetailView
+- Feature 4 - seznam tvůrců
+- Feature 5 - detail tvůrce
+- Feature 6 - země (seznam + detail)
+- Feature 7 - žánry (seznam + detail)
+
 ### Čtvrtek, 5. června · 17:30–21:00
 ### Pátek, 13. června · 17:30–21:00
 ### Pondělí, 16. června · 17:30–21:00
@@ -192,9 +203,24 @@ python manage.py createsuperuser
 - [x] 6 země 
   - [x] 6.1 seznam
   - [x] 6.2 detail
-- [ ] 7 žánr 
-  - [ ] 7.1 seznam
-  - [ ] 7.2 detail
+- [x] 7 žánr 
+  - [x] 7.1 seznam
+  - [x] 7.2 detail
+- [x] 8 Přidávání
+  - [x] 8.1 Žánr
+  - [x] 8.2 Země
+  - [x] 8.3 Tvůrce
+  - [x] 8.4 Film
+- [ ] 9 Editace
+  - [ ] 9.1 Žánr
+  - [ ] 9.2 Země
+  - [ ] 9.3 Tvůrce
+  - [ ] 9.4 Film
+- [ ] 10 Mazání
+  - [ ] 10.1 Žánr
+  - [ ] 10.2 Země
+  - [ ] 10.3 Tvůrce
+  - [ ] 10.4 Film
 
 ## Databáze
 ![ER diagram](./files/ER_diagram_v1.png)
@@ -389,6 +415,3 @@ nebo:
 #### .delete()
 
 `Genre.objects.get(name='Horror').delete()`
-
-
-1:23:59
