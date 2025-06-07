@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.views import View
-from django.views.generic import TemplateView, ListView, DetailView
+from django.views.generic import TemplateView, ListView, DetailView, FormView
 
+from viewer.forms import GenreForm
 from viewer.models import Movie, Creator, Country, Genre
 
 
@@ -65,6 +66,11 @@ class GenreDetailView(DetailView):
     template_name = 'genre.html'
     model = Genre
     context_object_name = 'genre'
+
+
+class GenreFormView(FormView):
+    template_name = 'form.html'
+    form_class = GenreForm
 
 
 
