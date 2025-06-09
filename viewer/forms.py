@@ -14,6 +14,7 @@ class GenreForm(Form):
     def clean_name(self):
         initial = self.cleaned_data['name']
         return initial.capitalize()
+    #Django volá automaticky, stačí tu tedy jen definovat
 
 
 """
