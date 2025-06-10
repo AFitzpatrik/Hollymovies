@@ -416,3 +416,4 @@ nebo:
 
 `Genre.objects.get(name='Horror').delete()`
 .
+2.32.40
