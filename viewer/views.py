@@ -38,7 +38,7 @@ class MovieFormView(FormView):
             title_orig=cleaned_data['title_orig'],
             title_cz=cleaned_data['title_cz'],
             #genres=cleaned_data['genres'],
-            # a dalšé položky z formuláře
+            # a další položky z formuláře
         )
         return result
 
