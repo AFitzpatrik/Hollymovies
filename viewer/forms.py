@@ -17,6 +17,20 @@ class GenreForm(Form):
     #Django volá automaticky, stačí tu tedy jen definovat
 
 
+class GenreModelForm(ModelForm):
+    class Meta:
+        model = Genre
+        fields = '__all__'
+
+        labels = {
+            'name': 'Název žánru'
+        }
+
+    def clean_name(self):
+        initial = self.cleaned_data['name']
+        return initial.capitalize()
+
+
 """
 class MovieForm(Form):
     title_orig = CharField(label='Originální název', max_length=64, required=True)

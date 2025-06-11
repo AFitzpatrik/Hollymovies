@@ -9,17 +9,19 @@
     <a href="{% url 'country_create' %}" class="btn btn-primary">Přidat zemi</a>
     <ul>
         {% for country in countries %}
-            <li><a href="{% url 'country' country.id %}">{{ country }}</a><br>
-            Počet filmů: {{ country.movies.count }} <br>
+            <li><a href="{% url 'country' country.id %}">{{ country }}</a>
+                <a href="{% url 'country_update' country.id %}">✏️</a><br>
+                Počet filmů: {{ country.movies.count }} <br>
                 <ul>
                     {% for movie in country.movies.all %}
                         <li><a href="{% url 'movie' movie.id %}">{{ movie }}</a></li>
                     {% endfor %}
                 </ul>
-            Počet tvůrců: {{ country.creators.count }}
+                Počet tvůrců: {{ country.creators.count }}
                 <ul>
                     {% for creator in country.creators.all %}
                         <li><a href="{% url 'creator' creator.id %}">{{ creator }}</a></li>
+
                     {% endfor %}
                 </ul>
             </li>
