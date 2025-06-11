@@ -1,7 +1,11 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import TemplateView, ListView, DetailView
+from django.views.generic import TemplateView, ListView, DetailView, FormView, \
+    CreateView
 
+from viewer.forms import GenreForm, MovieModelForm, CountryModelForm, \
+    CreatorModelForm
 from viewer.models import Movie, Creator, Country, Genre
 
 
@@ -19,6 +23,38 @@ class MovieDetailView(DetailView):
     template_name = 'movie.html'
     model = Movie
     context_object_name = 'movie'
+
+
+class MovieFormView(FormView):
+    template_name = 'form.html'
+    #form_class = MovieForm
+    form_class = MovieModelForm
+    success_url = reverse_lazy('movies')
+
+    def form_valid(self, form):
+        result = super().form_valid(form)
+        cleaned_data = form.cleaned_data
+        Movie.objects.create(
+            title_orig=cleaned_data['title_orig'],
+            title_cz=cleaned_data['title_cz'],
+            #genres=cleaned_data['genres'],
+            # a dalšé položky z formuláře
+        )
+        return result
+
+    def form_invalid(self, form):
+        print('Formulář není validní')
+        return super().form_invalid(form)
+
+
+class MovieCreateView(CreateView):
+    template_name = 'form.html'
+    form_class = MovieModelForm
+    success_url = reverse_lazy('movies')
+
+    def form_invalid(self, form):
+        print('Formulář není validní')
+        return super().form_invalid(form)
 
 
 class CreatorsListView(ListView):
@@ -43,6 +79,16 @@ class CreatorDetailView(DetailView):
     context_object_name = 'creator'
 
 
+class CreatorCreateView(CreateView):
+    template_name = 'form.html'
+    form_class = CreatorModelForm
+    success_url = reverse_lazy('creators')
+
+    def form_invalid(self, form):
+        print('Formulář není validní')
+        return super().form_invalid(form)
+
+
 class CountriesListView(ListView):
     template_name = 'countries.html'
     model = Country
@@ -53,6 +99,16 @@ class CountryDetailView(DetailView):
     template_name = 'country.html'
     model = Country
     context_object_name = 'country'
+
+
+class CountryCreateView(CreateView):
+    template_name = 'form.html'
+    form_class = CountryModelForm
+    success_url = reverse_lazy('countries')
+
+    def form_invalid(self, form):
+        print('Formulář není validní')
+        return super().form_invalid(form)
 
 
 class GenresListView(ListView):
@@ -67,4 +123,19 @@ class GenreDetailView(DetailView):
     context_object_name = 'genre'
 
 
+class GenreFormView(FormView):
+    template_name = 'form.html'
+    form_class = GenreForm
+    success_url = reverse_lazy('genres')
 
+    def form_valid(self, form):
+        result = super().form_valid(form)
+        cleaned_data = form.cleaned_data
+        Genre.objects.create(
+            name=cleaned_data['name']
+        )
+        return result
+
+    def form_invalid(self, form):
+        print('Formulář není validní')
+        return super().form_invalid(form)
