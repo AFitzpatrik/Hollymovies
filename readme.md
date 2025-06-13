@@ -58,7 +58,23 @@
 - Feature 7 - žánry (seznam + detail)
 
 ### Čtvrtek, 5. června · 17:30–21:00
-### Pátek, 13. června · 17:30–21:00
+- Prošli jsme slidy 56-80
+- Formuláře
+  - Form
+  - ModelForm
+    - Meta
+    - clean metody
+- Views
+  - FormView
+  - CreateView
+  - UpdateView
+- Features 8 a 9.1+9.2 
+
+### Středa, 11. června · 17:30–21:00
+- Features 9.3+9.4
+- DeleteView
+- Features 10.1, 10.2, 10.3, 10.4
+
 ### Pondělí, 16. června · 17:30–21:00
 ### Středa, 25. června · 17:30–21:00
 ### Pondělí, 30. června · 17:30–20:30
@@ -211,16 +227,16 @@ python manage.py createsuperuser
   - [x] 8.2 Země
   - [x] 8.3 Tvůrce
   - [x] 8.4 Film
-- [ ] 9 Editace
-  - [ ] 9.1 Žánr
-  - [ ] 9.2 Země
-  - [ ] 9.3 Tvůrce
-  - [ ] 9.4 Film
-- [ ] 10 Mazání
-  - [ ] 10.1 Žánr
-  - [ ] 10.2 Země
-  - [ ] 10.3 Tvůrce
-  - [ ] 10.4 Film
+- [x] 9 Editace
+  - [x] 9.1 Žánr
+  - [x] 9.2 Země
+  - [x] 9.3 Tvůrce
+  - [x] 9.4 Film
+- [x] 10 Mazání
+  - [x] 10.1 Žánr
+  - [x] 10.2 Země
+  - [x] 10.3 Tvůrce
+  - [x] 10.4 Film
 
 ## Databáze
 ![ER diagram](./files/ER_diagram_v1.png)
@@ -415,5 +431,3 @@ nebo:
 #### .delete()
 
 `Genre.objects.get(name='Horror').delete()`
-.
-2.32.40
