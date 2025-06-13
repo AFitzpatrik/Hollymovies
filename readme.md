@@ -431,3 +431,5 @@ nebo:
 #### .delete()
 
 `Genre.objects.get(name='Horror').delete()`
+
+35:19
