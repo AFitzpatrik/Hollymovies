@@ -63,10 +63,16 @@ class MovieUpdateView(UpdateView):
     model = Movie
     success_url = reverse_lazy('movies')
 
-
     def form_invalid(self, form):
         print('Formulář není validní')
         return super().form_invalid(form)
+
+
+class MovieDeleteView(DeleteView):
+    template_name = 'confirm_delete.html'
+    model = Movie
+    success_url = reverse_lazy('movies')
+
 
 class CreatorsListView(ListView):
     template_name = 'creators.html'
@@ -111,6 +117,12 @@ class CreatorUpdateView(UpdateView):
         return super().form_invalid(form)
 
 
+class CreatorDeleteView(DeleteView):
+    template_name = 'confirm_delete.html'
+    model = Creator
+    success_url = reverse_lazy('creators')
+
+
 class CountriesListView(ListView):
     template_name = 'countries.html'
     model = Country
@@ -142,6 +154,12 @@ class CountryUpdateView(UpdateView):
     def form_invalid(self, form):
         print('Formulář není validní')
         return super().form_invalid(form)
+
+
+class CountryDeleteView(DeleteView):
+    template_name = 'confirm_delete.html'
+    model = Country
+    success_url = reverse_lazy('countries')
 
 
 class GenresListView(ListView):
@@ -186,6 +204,6 @@ class GenreUpdateView(UpdateView):
 
 
 class GenreDeleteView(DeleteView):
-    template_name = 'confirm_delete.html' # To co se mi zobrazí
+    template_name = 'confirm_delete.html'
     model = Genre
     success_url = reverse_lazy('genres')
