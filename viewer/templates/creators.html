@@ -21,11 +21,13 @@
 
     <h1>Seznam herců</h1>
     <a href="{% url 'creator_create' %}" class="btn btn-primary">Přidat tvůrce</a>
+
     <ul>
         {% for creator in creators %}
             {% if creator.acting.all %}
                 <li>
                     <a href="{% url 'creator' creator.id %}">{{ creator }}</a>
+                    <a href="{% url 'creator_update' creator.id %}">✏️</a>
                 </li>
             {% endif %}
         {% empty %}
@@ -39,6 +41,7 @@
             {% if creator.directing.all %}
                 <li>
                     <a href="{% url 'creator' creator.id %}">{{ creator }}</a>
+                    <a href="{% url 'creator_update' creator.id %}">✏️</a>
                 </li>
             {% endif %}
         {% empty %}
@@ -52,6 +55,7 @@
             {% if creator.composing.all %}
                 <li>
                     <a href="{% url 'creator' creator.id %}">{{ creator }}</a>
+                    <a href="{% url 'creator_update' creator.id %}">✏️</a>
                 </li>
             {% endif %}
         {% empty %}

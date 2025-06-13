@@ -14,6 +14,7 @@
         {% for movie in movies %}
             <li>
                 <a href="{% url 'movie' movie.id %}">{{ movie }}</a>
+                <a href="{% url 'movie_update' movie.id %}">✏️</a>
             </li>
 
         {% empty %}
