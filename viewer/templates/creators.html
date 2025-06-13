@@ -28,6 +28,7 @@
                 <li>
                     <a href="{% url 'creator' creator.id %}">{{ creator }}</a>
                     <a href="{% url 'creator_update' creator.id %}">✏️</a>
+                    <a href="{% url 'creator_delete' creator.id %}">❌</a>
                 </li>
             {% endif %}
         {% empty %}
@@ -42,6 +43,7 @@
                 <li>
                     <a href="{% url 'creator' creator.id %}">{{ creator }}</a>
                     <a href="{% url 'creator_update' creator.id %}">✏️</a>
+                    <a href="{% url 'creator_delete' creator.id %}">❌</a>
                 </li>
             {% endif %}
         {% empty %}
@@ -56,6 +58,7 @@
                 <li>
                     <a href="{% url 'creator' creator.id %}">{{ creator }}</a>
                     <a href="{% url 'creator_update' creator.id %}">✏️</a>
+                    <a href="{% url 'creator_delete' creator.id %}">❌</a>
                 </li>
             {% endif %}
         {% empty %}
