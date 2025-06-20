@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django_dump_load_utf8',
 
     'viewer',
+    'accounts',
 
 ]
 
@@ -62,7 +63,7 @@ ROOT_URLCONF = 'hollymovies.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -128,3 +129,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = 'home'

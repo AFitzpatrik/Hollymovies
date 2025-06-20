@@ -15,8 +15,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.contrib.auth.password_validation import password_changed
+from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView, PasswordResetView
+from django.urls import path, include
 
+from accounts.forms import MyAuthForm, MyPasswordChangeForm
+from accounts.views import user_logout, SignUpView
 from viewer.views import *
 
 urlpatterns = [
@@ -45,4 +49,12 @@ urlpatterns = [
     path('genre/create/', GenreFormView.as_view(), name='genre_create'),
     path('genre/update/<int:pk>/', GenreUpdateView.as_view(), name='genre_update'),
     path('genre/delete/<int:pk>/', GenreDeleteView.as_view(), name='genre_delete'),
+    path('accounts/login/',LoginView.as_view(template_name='login_page.html',authentication_form=MyAuthForm),name='login'),
+    path('accounts/logout/', user_logout, name='logout'),
+    path('accounts/password_change/',PasswordChangeView.as_view(template_name='password_change.html',form_class=MyPasswordChangeForm),name='password_change'),
+    path('accounts/password_reset/', PasswordResetView.as_view(template_name='password_reset.html'), name='password_reset'),
+    #ostaní defaultní cesty
+    path('accounts/', include ('django.contrib.auth.urls')),
+    path('accounts/signup', SignUpView.as_view(), name='signup'),
+
 ]

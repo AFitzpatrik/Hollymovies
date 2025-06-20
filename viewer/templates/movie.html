@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-    <h1 class="display-4">{{ movie.title_orig }}</h1>
+    <h1 class="display-4">{{ movie.title_orig | upper }}</h1>
     <p class="lead">{{ movie.title_cz }}</p>
 
     <hr class="my-4">
