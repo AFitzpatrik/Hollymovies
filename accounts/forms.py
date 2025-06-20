@@ -1,8 +1,24 @@
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordChangeForm
 from django.db.transaction import atomic
 from django.forms import DateField, NumberInput, CharField, Textarea
+from django.views.generic import FormView
 
 from accounts.models import Profile
+
+
+class MyAuthForm(AuthenticationForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['username'].label = 'Uživatelské jméno'
+        self.fields['password'].label = 'Heslo'
+
+
+class MyPasswordChangeForm(PasswordChangeForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['old_password'].label = 'Staré heslo'
+        self.fields['new_password1'].label = 'Nové heslo'
+        self.fields['new_password2'].label = 'Potvrzení nového hesla'
 
 
 class SignUpForm(UserCreationForm):
