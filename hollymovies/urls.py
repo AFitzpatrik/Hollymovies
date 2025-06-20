@@ -19,7 +19,7 @@ from django.contrib.auth.password_validation import password_changed
 from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView, PasswordResetView
 from django.urls import path, include
 
-from accounts.views import user_logout
+from accounts.views import user_logout, SignUpView
 from viewer.views import *
 
 urlpatterns = [
@@ -53,7 +53,8 @@ urlpatterns = [
     path('accounts/logout/', user_logout, name='logout'),
     path('accounts/password_change/', PasswordChangeView.as_view(template_name='form.html'), name='password_change'),
     path('accounts/password_reset/', PasswordResetView.as_view(template_name='password_reset.html'), name='password_reset'),
-    #ostaní defualtní cesty
+    #ostaní defaultní cesty
     path('accounts/', include ('django.contrib.auth.urls')),
+    path('accounts/signup', SignUpView.as_view(), name='signup'),
 
 ]

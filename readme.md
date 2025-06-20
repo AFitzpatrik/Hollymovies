@@ -71,18 +71,36 @@
 - Features 8 a 9.1+9.2 
 
 ### Středa, 11. června · 17:30–21:00
+- Prošli jsme slidy 81-106
 - Features 9.3+9.4
 - DeleteView
 - Features 10.1, 10.2, 10.3, 10.4
-- Pokročílé šablony
+- Pokročilé šablony
 - Filtry
-- 
+- Formuláře
 
 ### Pondělí, 16. června · 17:30–21:00
+- Prošli jsme slidy 107-136
+- Autentizace
+  - Teorie (hash funkce,...)
+  - Feature 11.1 Zobrazení přihlášeného uživatele
+  - Feature 11.2 Omezení zobrazení pouze pro přihlášené uživatele (LoginRequiredMixin)
+  - Feature 11.3 Login (Přihlášení)
+  - Feature 11.5 Logout (Odhlášení) + Další operace (změna hesla, reset hesla,...)
+  - Aplikace accounts
+  - Feature 11.6 Registrační formulář + Rozšíření uživatelského modelu (Profile)
+
 ### Středa, 25. června · 17:30–21:00
+Plán: Autorizace
+
 ### Pondělí, 30. června · 17:30–20:30
+Plán: Panel správce
+
 ### Úterý, 1. července · 17:30–21:00
+Plán: testování
+
 ### Čtvrtek, 3. července · 17:30–21:30
+Plán: API
 
 ## Django
 ### Instalace
@@ -240,12 +258,14 @@ python manage.py createsuperuser
   - [x] 10.2 Země
   - [x] 10.3 Tvůrce
   - [x] 10.4 Film
-- [ ] 11 Autentikace
+- [ ] 11 Autentizace
   - [x] 11.1 Zobrazení přihlášeného uživatele
   - [x] 11.2 Omezení zobrazení pouze pro přihlášené uživatele
   - [ ] 11.3 Omezení zobrazení pouze pro superuživatele
   - [x] 11.4 Login
-  - [ ] 11.5 Logout, změna hesla, reset hesla, registrace
+  - [x] 11.5 Logout, změna hesla, reset hesla
+  - [x] 11.6 registrace + Profile
+
 ## Databáze
 ![ER diagram](./files/ER_diagram_v1.png)
 - [x] Genre
@@ -274,7 +294,6 @@ python manage.py createsuperuser
   - [x] description (String)
   - [x] year (Integer)
   - [x] countries (n:m -> Country)
-
 
 ### DUMP/LOAD databáze
 ```bash
@@ -440,4 +459,3 @@ nebo:
 #### .delete()
 
 `Genre.objects.get(name='Horror').delete()`
-
